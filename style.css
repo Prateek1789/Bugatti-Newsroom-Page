@@ -82,7 +82,7 @@ footer {
     font-weight: 600;
 }
 
-.nav-list {
+.interm-nav {
     top: 0px;
     right: 2rem;
     height: 70px;
@@ -251,7 +251,7 @@ main {
     overflow: hidden;
     margin-bottom: 2rem;
 }
-.gallery img {
+.gallery-img {
     width: 100%;
     height: 300px;
     object-fit: cover;
