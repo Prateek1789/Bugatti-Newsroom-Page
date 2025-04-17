@@ -208,3 +208,53 @@ figcaption {
     letter-spacing: 1px;
     padding-block: 0.5rem;
 }
+
+main {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+        "intro"
+        "gallery"
+        "info";
+    gap: 2.5rem;
+}
+.intro {
+    width: 100%;
+}
+.intro-article {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-inline-end: 2rem;
+}
+.intro h2 {
+    font-size: var(--font-lg);
+    font-weight: 400;
+}
+.intro p {
+    font-size: var(--font-lg);
+    font-weight: 350;
+    max-width: 71ch;
+    line-height: 1.5;
+    text-align: start;
+}
+.gallery {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-template-rows: repeat(2, minmax(300px, 1fr));
+    grid-template-areas: 
+        "img1 img2 img3"
+        "img4 img5 img6";
+    gap: 1rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+.gallery img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: 50% 80%;
+    font-style: italic;
+}
