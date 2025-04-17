@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Condensed", sans-serif;
+}
+/* Root Variables */
+:root {
+    --clr-background: #f5f5f5;
+    --clr-dark: #1a1a1a;
+    --clr-light: #f5f5f5;
+    --clr-text: #161616;
+    --clr-text-light: #eaeaea;
+    --clr-accent: #004bfa;
+    --clr-border: #1a1a1a;
+    --font-hero: clamp(3rem, 4.4vw + 1rem, 8rem);
+    --font-lg: clamp(1.5rem, 2vw + 1rem, 3rem);
+    --font-xxsm: 0.65rem;
+    --font-xsm: 0.75rem;
+    --font-sm: 1rem;
+    --font-md: 1.32rem;
+    --font-lg: 1.75rem;
+    --font-xlg: 2rem;
+}
+html {
+    scroll-behavior: smooth;
+}
+button {
+    cursor: pointer;
+    transition: 240ms ease;
+}
+li a {
+    text-decoration: none;
+    list-style-type: none;
+}
+a {
+    cursor: pointer;
+    transition: 240ms ease;
+}
+
+body {
+    width: 100vw;
+    background-color: var(--clr-background);
+    color: var(--clr-text);
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+    gap: 2.5rem;
+    justify-content: center;
+    position: relative;
+}
+.dark-mode {
+    --clr-background: #0f0f0f;
+    --clr-text: #eaeaea;
+    --clr-border: #8a8a8a;
+}
+header,
+main,
+footer {
+    max-width: 1800px;
+    padding: 0rem 2rem;
+}
+.navbar {
+    top: 0;
+    right: 2rem;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    margin-block-end: 6rem;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.nav-list {
+    top: 0px;
+    right: 2rem;
+    height: 70px;
+    position: fixed;
+    padding-inline-end: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #8f8f8f20;
+    backdrop-filter: blur(12px);
+    z-index: 999;
+}
+.btn-sub {
+    height: 40px;
+    padding-block: 0.5rem;
+    padding-inline: 0.75rem;
+    border: 1px solid var(--clr-accent);
+    background-color: var(--clr-accent);
+    color: var(--clr-text-light);
+}
+.btn-sub:hover {
+    background-color: transparent;
+    color: var(--clr-accent);
+    border: 1px solid var(--clr-accent);
+    
+}
+
+.theme-toggle {
+    width: 70px;
+    height: 40px;
+    background-color: rgba(190, 190, 190, 0.606);
+    border: none;
+    margin-inline: 2rem 1.5rem;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem;
+    cursor: pointer;
+    position: relative;
+}
+.dark-mode-icon,
+.light-mode-icon {
+    width: 25px;
+    height: 25px;
+}
+.toggle-ball {
+    top: 0.25rem;
+    right: 0.25rem;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: var(--clr-light);
+    transform: translateY(-5%) translateX(5%);
+    transition: 240ms ease;
+}
+.toggle-ball.active {
+    transform: translateY(-5%) translateX(-80%)
+}
+.menu-toggle {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+}
+.menu-toggle img {
+    width: 100%;
+    height: 100%;
+}
+.hero {
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+        "hero-date"
+        "hero-title"
+        "hero-img";
+}
+
+.hero > span:nth-child(1) {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 30vw;
+    border-block-end: var(--clr-border) 1px solid;
+    font-size: var(--font-xsm);
+}
+.title-area {
+    width: 100%;
+    height: auto;
+    margin-block: 1rem 2rem;
+}
+.title-area h1 {
+    font-size: var(--font-hero);
+    text-transform: uppercase;
+    font-weight: 450;
+    line-height: 1;
+}
+.hero-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.hero-image figure {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.hero-image figure img {
+    max-height: 95vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 70%;
+}
+figcaption {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    font-size: var(--font-xxsm);
+    letter-spacing: 1px;
+    padding-block: 0.5rem;
+}
