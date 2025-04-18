@@ -18,7 +18,7 @@
     --font-hero: clamp(3rem, 4.4vw + 1rem, 8rem);
     --font-lg: clamp(1.5rem, 2vw + 1rem, 3rem);
     --font-xxsm: 0.65rem;
-    --font-xsm: 0.75rem;
+    --font-xsm: 0.82rem;
     --font-sm: 1rem;
     --font-md: 1.32rem;
     --font-lg: 1.75rem;
@@ -31,15 +31,20 @@ button {
     cursor: pointer;
     transition: 240ms ease;
 }
-li a {
+li,
+ a {
     text-decoration: none;
     list-style-type: none;
+    color: var(--clr-text);
 }
 a {
     cursor: pointer;
     transition: 240ms ease;
 }
-
+svg {
+    fill: var(--clr-svg-fill);
+    transition: 240ms ease;
+}
 body {
     width: 100vw;
     background-color: var(--clr-background);
@@ -101,6 +106,9 @@ footer {
     padding-inline: 0.75rem;
     border: 1px solid var(--clr-accent);
     background-color: var(--clr-accent);
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: var(--font-xsm);
     color: var(--clr-text-light);
 }
 .btn-sub:hover {
@@ -112,7 +120,7 @@ footer {
 
 .theme-toggle {
     width: 70px;
-    height: 40px;
+    height: 35px;
     background-color: rgba(190, 190, 190, 0.606);
     border: none;
     margin-inline: 2rem 1.5rem;
@@ -130,10 +138,10 @@ footer {
     height: 25px;
 }
 .toggle-ball {
+    height: 30px;
+    width: 30px;
     top: 0.25rem;
     right: 0.25rem;
-    height: 35px;
-    width: 35px;
     border-radius: 50%;
     position: absolute;
     background-color: var(--clr-light);
@@ -141,7 +149,7 @@ footer {
     transition: 240ms ease;
 }
 .toggle-ball.active {
-    transform: translateY(-5%) translateX(-80%)
+    transform: translateY(-5%) translateX(-110%)
 }
 .menu-toggle {
     width: 40px;
@@ -257,4 +265,82 @@ main {
     object-fit: cover;
     object-position: 50% 80%;
     font-style: italic;
+}
+.info {
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    gap: 1.5rem;
+    position: relative;
+}
+.info aside {
+    top: 0px;
+    width: 100%;
+    height: 20%;
+    flex: 1;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: var(--font-xsm);
+    font-weight: 360;
+}
+.info aside ul li {
+    padding-block: 1rem;
+    border-block-end: 1px solid var(--clr-border);
+}
+.info aside ul li:first-child {
+    border-block-start: 1px solid var(--clr-border);
+}
+.info aside ul li:hover {
+    .aside-links {
+        transform: translateX(10px);
+    }
+}
+.aside-links {
+    cursor: pointer;
+    transition: all 240ms ease;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.info aside p {
+    max-width: 55ch;
+    line-height: 1.8;
+    font-weight: 350;
+    letter-spacing: 0.75px;
+    text-transform: uppercase;
+}
+.info aside p span a {
+    font-weight: 500;
+    transition: all 240ms ease;
+}
+.info aside p span a:hover {
+    color: var(--clr-accent);
+}
+.info article {
+    flex: 2;
+}
+.info article p {
+    max-width: 62ch;
+    font-weight: 350;
+    line-height: 1.5;
+    font-size: var(--font-md);
+    margin-bottom: 2rem;
+}
+.word-o-mouth {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 20ch;
+    background-color: var(--clr-accent);
+    color: var(--clr-text-light);
+}
+.word-o-mouth span {
+    font-size: var(--font-sm);
+    letter-spacing: 1px;
+    font-weight: 300;
+    text-transform: uppercase;
 }
