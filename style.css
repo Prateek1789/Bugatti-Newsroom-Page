@@ -15,6 +15,7 @@
     --clr-text-light: #eaeaea;
     --clr-accent: #004bfa;
     --clr-border: #1a1a1a;
+    --clr-svg-fill: #1a1a1a;
     --font-hero: clamp(3rem, 4.4vw + 1rem, 8rem);
     --font-lg: clamp(1.5rem, 2vw + 1rem, 3rem);
     --font-xxsm: 0.65rem;
@@ -63,12 +64,13 @@ body {
     --clr-background: #0f0f0f;
     --clr-text: #eaeaea;
     --clr-border: #8a8a8a;
+    --clr-svg-fill: #eaeaea;
 }
 header,
 main,
 footer {
-    max-width: 1800px;
-    padding: 0rem 2rem;
+    max-width: 112.5rem;
+    padding-inline: 2rem;
 }
 .navbar {
     top: 0;
@@ -343,4 +345,43 @@ main {
     letter-spacing: 1px;
     font-weight: 300;
     text-transform: uppercase;
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    padding-block: 2rem;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 
+        "car-info"
+        "footer-nav";
+    gap: 2rem;
+}
+.footer h2 {
+    font-size: var(--font-xlg);
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+.car-consumption-info li {
+    padding-block: 1rem;
+    border-block-end: 1px solid var(--clr-border);
+    text-transform: uppercase;
+    font-size: var(--font-xsm);
+    font-weight: 360;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    display: flex;
+    justify-content: space-between;
+}
+.car-consumption-info li:first-child {
+    border-block-start: 1px solid var(--clr-border);
+}
+.car-consumption-info li p {
+    max-width: 145ch;
+}
+.car-consumption-info li a {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
 }
