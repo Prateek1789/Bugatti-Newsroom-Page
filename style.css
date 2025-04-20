@@ -165,7 +165,7 @@ footer {
 .primary-navigation {
     top: 0;
     right: 0;
-    width: 65vw;
+    width: 65.5vw;
     height: 100vh;
     padding-inline: 2rem;
     padding-block: 6rem 1rem;
@@ -197,7 +197,8 @@ footer {
     align-items: start;
     gap: 2rem;
 }
-.language-selector {
+.language-selector,
+.language-list {
     display: flex;
     gap: 1rem;
     align-items: center;
@@ -212,6 +213,7 @@ footer {
     border: none;
     background-color: transparent;
     border-bottom: 1px solid var(--clr-border);
+    padding-inline: 1rem;
 }
 .navigation-area {
     width: 100%;
@@ -231,19 +233,19 @@ footer {
     margin-block-end: 1rem;
 }
 
-.primary-nav-list {
+.primary-nav-list-item {
     margin-block-end: 1rem;
 }
-.primary-nav-list:hover {
+.primary-nav-links:hover {
     .right-arrow {
         fill: var(--clr-accent);
     }
 }
 
-.primary-nav-list a {
+.primary-nav-list-item a {
     font-size: var(--font-md);
 }
-.primary-nav-list a svg {
+.primary-nav-list-item a svg {
     transform: translateY(0.25rem);
 }
 
@@ -256,11 +258,14 @@ footer {
         "legals socials";
     gap: 1rem;
 }
-.nav-footer span {
+.nav-footer div {
     display: flex;
     gap: 2rem;
     font-size: var(--font-xsm);
     font-weight: 360;
+}
+.nav-footer-list-item {
+    margin-block-end: 0.5rem;
 }
 .nav-socials {
     height: 100%;
@@ -540,46 +545,44 @@ main {
     font-weight: 360;
 }
 .socials {
-    word-wrap: 100%;
+    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 1;
 }
-.socials span {
-    width: 100%;
+.footer-social-media-list {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
 }
-.socials span svg {
+.social-media-links {
     cursor: pointer;
 }
-.socials span svg:hover {
-    fill: var(--clr-accent);
+.social-media-links:hover {
+    svg {
+        fill: var(--clr-accent);
+    }
 }
-.language-wrapper {
+.footer-lang-selector {
     height: 100%;
     width: 100%;
     flex: 3;
-}
-.language-wrapper span {
-    height: 100%;
-    width: 100%;
     display: flex;
-    gap: 1rem;
     align-items: center;
     justify-content: center;
 }
 .lang-icon {
-    width: 25px;
-    height: 25px;
+    display: inline;
 }
-.language-wrapper a:hover {
+.lang-list {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+.lang-list a:hover {
     color: var(--clr-accent);
 }
+
 .footer-nav-wrapper {
     flex: 2;
 }
