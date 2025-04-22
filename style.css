@@ -65,7 +65,11 @@ body {
     --clr-text: #eaeaea;
     --clr-border: #8a8a8a;
     --clr-svg-fill: #eaeaea;
+    .socials-list-item svg {
+        fill: var(--clr-background);
+    }
 }
+
 header,
 main,
 footer {
@@ -190,6 +194,20 @@ footer {
 .primary-navigation a:hover {
     color: var(--clr-accent);
 }
+.menu-close-btn {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    cursor: pointer;
+}
+.menu-close-btn svg {
+    width: 100%;
+    height: 100%;
+}
 .search {
     width: 100%;
     display: flex;
@@ -274,18 +292,34 @@ footer {
     align-items: start;
     justify-content: start;
 }
-.nav-socials a {
+.socials-list {
+    display: flex;
+    gap: 0.5rem;
+}
+.socials-list-item {
+    width: 30px;
+    height: 30px;
+    background-color: var(--clr-text);
+    display: grid;
+    place-content: center;
+    transition: all 240ms ease;
     cursor: pointer;
 }
-.nav-socials a:nth-child(2),
-.nav-socials a:nth-child(3),
-.nav-socials a:nth-child(4),
-.nav-socials a:nth-child(5) {
-    margin-left: -2rem;
-} 
-
-.nav-socials svg:hover {
-    fill: var(--clr-accent);
+.socials-list-item:last-child {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+.socials-list-item:last-child svg {
+    margin-bottom: -3px;
+}
+.socials-list-item:hover {
+    background-color: var(--clr-accent);
+}
+.social-media-links svg {
+    width: 100%;
+    height: 100%;
+    fill: var(--clr-text-light);
 }
 
 .hero {
@@ -552,17 +586,7 @@ main {
     justify-content: center;
     flex: 1;
 }
-.footer-social-media-list {
-    display: flex;
-}
-.social-media-links {
-    cursor: pointer;
-}
-.social-media-links:hover {
-    svg {
-        fill: var(--clr-accent);
-    }
-}
+
 .footer-lang-selector {
     height: 100%;
     width: 100%;
