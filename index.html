@@ -45,8 +45,15 @@
                             <li class="language-list-item"><a href="" lang="de">Deutsch</a></li>
                         </ul>
                     </div>
-                    <label for="search-bar" style="display: none;">Search</label>
-                    <input type="text" id="search-bar" placeholder="Find Press release, Images and Videos" class="search-input">
+                    <span class="search-wrapper" aria-label="Search Bar">
+                        <label for="search-bar" style="display: none;">Search</label>
+                        <input type="text" id="search-bar" placeholder="Find Press release, Images and Videos" class="search-input">
+                        <button type="button" class="search-btn" aria-label="Click to Search">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                            </svg>
+                        </button>
+                    </span>
                 </div>
                 <div class="navigation-area" aria-label="Navigation Links">
                     <ul class="nav-list-primary" style="grid-area: list-1;">
@@ -163,7 +170,7 @@
                 </div>
             </nav>
         </nav>
-        
+
         <!-- Logo -->
         <div class="logo">BUGATTI</div>
 
