@@ -1081,6 +1081,15 @@ main {
     .hero-image figure img {
         height: 28vh;
     }
+    .gallery {
+        margin-bottom: 0rem;
+    }
+    .info aside {
+        gap: 1rem;
+    }
+    .info aside ul {
+        margin-block-end: 1rem;
+    }
     .footer h2 {
         max-width: 25ch;
     }
@@ -1152,6 +1161,17 @@ main {
     .nav-socials {
         height: 30px;
         justify-content: start;
+    }
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 125px);
+        margin-bottom: 0rem;
+    }
+    .gallery-img {
+        height: 100%;
+    }
+    .word-o-mouth {
+        padding: 1rem;
     }
     #close-modal {
         top: 0.5rem;
