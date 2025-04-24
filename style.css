@@ -667,6 +667,146 @@ main {
     color: var(--clr-accent);
 }
 
+#sub-modal {
+    top: 0px;
+    left: calc(100vw - 420px);
+    width: 420px;
+    height: 100vh;
+    max-height: 100vh;
+    padding-block-start: 5rem;
+    padding-inline: 1rem;
+    border: none;
+    background-color: var(--clr-background);
+    color: var(--clr-text);
+    opacity: 0;
+    transform: translateX(420px);
+    transition: all 240ms ease allow-discrete;
+}
+#sub-modal::backdrop {
+    opacity: 0;
+    background-color: var(--clr-backdrop);
+    backdrop-filter: blur(5px);
+    transition: 240ms ease;
+}
+#sub-modal[open] {
+    opacity: 1;
+    transform: translate(0px);
+}
+#sub-modal[open]::backdrop {
+    opacity: 1;
+}
+
+@starting-style {
+    #sub-modal[open] {
+        opacity: 0;
+        transform: translate(420px);
+    }
+    #sub-modal[open]::backdrop {
+        opacity: 0;
+    }
+}
+
+#close-modal {
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    position: absolute;
+    border: none;
+}
+
+.modal-heading {
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: var(--font-xlg);
+    margin-bottom: 0.75rem;
+}
+.modal-para {
+    font-weight: 350;
+    font-size: var(--font-sm);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+.modal-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: var(--font-xsm);
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    padding-block: 1rem;
+}
+.email-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+#user-email {
+    height: 50px;
+    border: none;
+    border-block-end: 1px solid var(--clr-border);
+    font-size: var(--font-sm);
+    font-weight: 300;
+    background-color: transparent;
+    color: var(--clr-text);
+}
+#user-email:focus-visible {
+    outline: none;
+}
+#user-email::placeholder {
+    color: #dbdbdb;
+}
+.modal-lang-selector {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.modal-lang-selector ul {
+    display: flex;
+    gap: 1rem;
+}
+.modal-lang-selector ul li {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+}
+.modal-lang-selector ul input {
+    width: 18px;
+    height: 18px;
+}
+.checkbox-wrapper {
+    width: 100%;
+}
+.checkbox-wrapper ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.checkbox-wrapper ul li {
+    display: flex;
+    align-items: start;
+    gap: 0.25rem;
+}
+
+.modal-sub-btn {
+    width: 85%;
+    height: 55px;
+    background-color: var(--clr-accent);
+    color: var(--clr-text-light);
+    border: 1px solid var(--clr-accent);
+    font-size: var(--font-md);
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    transition: 240ms ease;
+}
+.modal-sub-btn:hover {
+    background-color: transparent;
+    color: var(--clr-accent);
+}
+
 @media (width <= 64rem) {
     :root {
         --font-hero: clamp(3rem, 6vw + 1rem, 6rem);
@@ -924,7 +1064,9 @@ main {
 
 @media (width < 30rem) {
     :root {
+        --font-xxsm: 0.7rem;
         --font-xsm: 0.75rem;
+        --font-xlg: 1.55rem;
     }
     header {
         gap: 1rem;
@@ -939,9 +1081,30 @@ main {
     .hero-image figure img {
         height: 28vh;
     }
+    .footer h2 {
+        max-width: 25ch;
+    }
     .footer-info {
         width: 100%;
         padding-block: 0rem 2rem;
+    }
+    #sub-modal {
+        top: 0px;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        max-width: 100vw;
+        max-height: 100vh;
+        padding-block-start: 5rem;
+        padding-inline: 1rem;
+        border: none;
+    }
+    .modal-heading {
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        font-size: var(--font-xlg);
+        margin-bottom: 0.75rem;
     }
 }
 
@@ -951,9 +1114,16 @@ main {
     footer {
         padding-inline: 0.7rem;
     }
+    .nav-buttons {  
+        padding-inline-end: 0.6rem;
+    }
     .primary-navigation {
         padding-block-start: 3rem;
         padding-inline: 0.7rem;
+    }
+    .menu-close-btn {
+        top: 0.5rem;
+        right: 0.6rem;
     }
     .primary-nav-grid {
         grid-template-rows: auto auto 124px;
@@ -982,5 +1152,9 @@ main {
     .nav-socials {
         height: 30px;
         justify-content: start;
+    }
+    #close-modal {
+        top: 0.5rem;
+        right: 0.6rem;
     }
 }
