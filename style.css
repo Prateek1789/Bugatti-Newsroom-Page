@@ -105,7 +105,7 @@ header {
 }
 .nav-buttons {
     top: 0px;
-    right: max(calc((100% - 1800px) / 2), 0px);
+    right: max(calc((100% - 112.52rem) / 2), 0px);
     height: 70px;
     position: fixed;
     z-index: 999;
@@ -198,8 +198,9 @@ header {
     background-color: var(--clr-backdrop);
     backdrop-filter: blur(5px);
     z-index: 998;
+    display: none;
     opacity: 0;
-    transition: 200ms ease;
+    transition: all 200ms ease allow-discrete;
 }
 .primary-navigation.active {
     opacity: 1;
@@ -207,6 +208,7 @@ header {
 }
 .backdrop.active {
     opacity: 1;
+    display: block;
 }
 
 .primary-nav-grid {
@@ -746,6 +748,7 @@ main {
 #user-email {
     height: 50px;
     border: none;
+    border-radius: 0px;
     border-block-end: 1px solid var(--clr-border);
     font-size: var(--font-sm);
     font-weight: 300;
