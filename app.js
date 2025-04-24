@@ -1,10 +1,9 @@
 const body = document.querySelector("body");
 const toggleBall = document.querySelector(".toggle-ball");
 const menuToggle = document.querySelector(".menu-toggle");
-const menuClose = document.querySelector(".menu-close-btn");
 const primaryNavigation = document.querySelector(".primary-navigation");
 const backdrop = document.querySelector(".backdrop");
-
+const modal = document.getElementById('sub-modal');
 
 function setTheme() {
     body.classList.toggle("dark-mode");
@@ -12,6 +11,14 @@ function setTheme() {
 };
 
 window.addEventListener("click", (e) => {
+    if (e.target.closest(".btn-sub")) {
+        modal.showModal();
+    }
+
+    if (e.target.closest("#close-modal")) {
+        modal.close();
+    }
+
     if (e.target.closest(".theme-toggle")) {
         setTheme();
     }
