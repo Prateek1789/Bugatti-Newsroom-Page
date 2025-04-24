@@ -14,6 +14,7 @@
     --clr-text: #161616;
     --clr-text-light: #eaeaea;
     --clr-accent: #004bfa;
+    --clr-backdrop: #004bfadf;
     --clr-border: #1a1a1a;
     --clr-svg-fill: #1a1a1a;
     --font-hero: clamp(3rem, 4.4vw + 1rem, 6rem);
@@ -188,10 +189,26 @@ header {
     transition: 240ms ease;
     opacity: 0;
 }
+.backdrop {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--clr-backdrop);
+    backdrop-filter: blur(5px);
+    z-index: 998;
+    opacity: 0;
+    transition: 200ms ease;
+}
 .primary-navigation.active {
     opacity: 1;
     transform: translateX(0%);
 }
+.backdrop.active {
+    opacity: 1;
+}
+
 .primary-nav-grid {
     height: 100%;
     width: 100%;
@@ -903,21 +920,40 @@ main {
     .fuel-consumption-list li p {
         max-width: 100%;
     }
-    .footer-logo svg {
-        width: 80px;
-    }
 }
 
 @media (width < 30rem) {
+    :root {
+        --font-xsm: 0.75rem;
+    }
+    header {
+        gap: 1rem;
+    }
     .primary-navigation {
         padding-inline: 1rem;
         padding-block: 3rem 1rem;
     }
+    .hero > span:nth-child(1) {
+        gap: 10vw;
+    }
+    .hero-image figure img {
+        height: 28vh;
+    }
+    .footer-info {
+        width: 100%;
+        padding-block: 0rem 2rem;
+    }
 }
 
 @media (width < 26.25rem) {
+    header,
+    main,
+    footer {
+        padding-inline: 0.7rem;
+    }
     .primary-navigation {
         padding-block-start: 3rem;
+        padding-inline: 0.7rem;
     }
     .primary-nav-grid {
         grid-template-rows: auto auto 124px;
