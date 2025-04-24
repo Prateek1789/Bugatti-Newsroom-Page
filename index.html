@@ -28,9 +28,9 @@
             <div class="nav-buttons">
                 <button type="button" class="btn-sub">SUBSCRIBE TO NEWSLETTER</button>
                 <button class="theme-toggle" aria-label="Toggle Dark/Light Mode">
-                    <img src="./assets/icons/dark_mode.svg" alt="Dark Mode Icon" class="dark-mode-icon">
-                    <img src="./assets/icons/light_mode.svg" alt="Light Mode Icon" class="light-mode-icon">
-                    <div class="toggle-ball"></div>
+                    <img src="./assets/icons/dark_mode.svg" alt="Dark Mode Icon" aria-hidden="true" class="dark-mode-icon">
+                    <img src="./assets/icons/light_mode.svg" alt="Light Mode Icon" aria-hidden="true" class="light-mode-icon">
+                    <div class="toggle-ball" aria-hidden="true"></div>
                 </button>
                 <button type="button" class="menu-toggle" aria-label="Toggle Navigation Menu" aria-controls="primary-nav" aria-expanded="false">
                     <svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 -960 960 960" width="100%" class="menu-toggle-icon" aria-hidden="true">
@@ -38,7 +38,7 @@
                     </svg>
                 </button>
             </div>
-
+            
             <!-- Navigation Menu-->
             <nav id="primary-nav" class="primary-navigation" aria-label="Main Navigation">
                 <div class="primary-nav-grid">
@@ -588,7 +588,7 @@
                             </svg>
                         </li>
                         <li class="lang-list-item"><a href="" lang="en">English</a></li>
-                        <li class="lang-list-item"><a href="" lang="fr">français</a></li>
+                        <li class="lang-list-item"><a href="" lang="fr">Français</a></li>
                         <li class="lang-list-item"><a href="" lang="de">Deutsch</a></li>
                     </ul>
                 </div>
@@ -609,6 +609,55 @@
             </nav>
         </div>
     </footer>
+    <dialog id="sub-modal" aria-label="Newsletter Subscription Form">
+        <button type="button" id="close-modal" aria-label="Close Subscription Modal">
+            <svg xmlns="http://www.w3.org/2000/svg" height="35px" width="35px" viewBox="0 -960 960 960"  aria-hidden="true">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+            </svg>
+        </button>
+        <h2 class="modal-heading">Subscribe to Newsletter</h2>
+        <p class="modal-para">Would you like to stay up to date on all things Bugatti? Register for our free Bugatti newsletter here.</p>
+        <form action="" method="post" class="modal-form">
+            <div class="email-wrapper">
+                <label for="user-email">E-Mail</label>
+                <input type="email" name="user_email" id="user-email" placeholder="Enter email address">
+            </div>
+            <div class="modal-lang-selector" aria-label="Newsletter Language Selector">
+                <p>Preferred language</p>
+                <ul>
+                    <li>
+                        <input type="radio" name="preferred-lang" lang="eng" id="lang-eng">
+                        <label for="lang-eng" class="lang-label">English</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="preferred-lang" lang="fr" id="lang-fr">
+                        <label for="lang-fr" class="lang-label">Français</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="preferred-lang" lang="du" id="lang-du">
+                        <label for="lang-du" class="lang-label">Deutsch</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="checkbox-wrapper">
+                <ul>
+                    <li>
+                        <input type="checkbox" name="" id="press-release">
+                        <label for="press-release">
+                            I would like to receive Bugatti press release in the future. Please add my name to the Bugatti media distribution list. I am aware of the fact that I can unsubscribe this service at any time.
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="" id="data-collection">
+                        <label for="data-collection">
+                            Bugatti collects data in order to complete your registration and the access to the features of the newsroom. Please see our privacy policy for more information on the use of your data and your rights.
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <button type="submit" class="modal-sub-btn">SUBSCRIBE TO NEWSLETTER</button>
+        </form>
+    </dialog>
     <script src="app.js"></script>
 </body>
 </html>
