@@ -3,6 +3,7 @@ const toggleBall = document.querySelector(".toggle-ball");
 const menuToggle = document.querySelector(".menu-toggle");
 const menuClose = document.querySelector(".menu-close-btn");
 const primaryNavigation = document.querySelector(".primary-navigation");
+const backdrop = document.querySelector(".backdrop");
 
 
 function setTheme() {
@@ -18,11 +19,13 @@ window.addEventListener("click", (e) => {
     if (e.target.closest(".menu-toggle")) {
         primaryNavigation.classList.add("active");
         menuToggle.setAttribute("aria-expanded", "true");
+        backdrop.classList.add("active");
     }
 
     if (e.target.closest(".menu-close-btn")) {
         primaryNavigation.classList.remove("active");
         menuToggle.setAttribute("aria-expanded", "false");
+        backdrop.classList.remove("active");
     }
     
     if (!e.target.matches(".primary-navigation") && !e.target.closest(".navbar")) {
@@ -30,6 +33,7 @@ window.addEventListener("click", (e) => {
         if (primaryNavigation.classList.contains("active")) {
             primaryNavigation.classList.remove("active");
             menuToggle.setAttribute("aria-expanded", "false");
+            backdrop.classList.remove("active");
         }
     }
 });
