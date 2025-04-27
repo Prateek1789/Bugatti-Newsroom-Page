@@ -186,8 +186,10 @@ header {
     z-index: 999;
     color: var(--clr-text);
     transform: translateX(100%);
-    transition: 240ms ease;
+    transition: 300ms ease;
     opacity: 0;
+    will-change: transform;
+    transform: translateZ(0%);
 }
 .backdrop {
     top: 0;
@@ -200,7 +202,7 @@ header {
     z-index: 998;
     display: none;
     opacity: 0;
-    transition: all 200ms ease allow-discrete;
+    transition: all 240ms ease allow-discrete;
 }
 .primary-navigation.active {
     opacity: 1;
@@ -210,7 +212,12 @@ header {
     opacity: 1;
     display: block;
 }
-
+@starting-style {
+    .backdrop.active {
+        opacity: 0;
+        display: block;
+    }
+}
 .primary-nav-grid {
     height: 100%;
     width: 100%;
