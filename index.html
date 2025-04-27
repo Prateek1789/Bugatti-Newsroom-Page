@@ -25,9 +25,9 @@
                     </g></g>
                 </svg>
             </div>
-            <div class="nav-buttons">
+            <div class="nav-buttons" role="group" aria-label="Quick Actions">
                 <button type="button" class="btn-sub">SUBSCRIBE TO NEWSLETTER</button>
-                <button class="theme-toggle" aria-label="Toggle Dark/Light Mode">
+                <button class="theme-toggle" aria-label="Toggle Dark/Light Mode" aria-pressed="false">
                     <img src="./assets/icons/dark_mode.svg" alt="Dark Mode Icon" aria-hidden="true" class="dark-mode-icon">
                     <img src="./assets/icons/light_mode.svg" alt="Light Mode Icon" aria-hidden="true" class="light-mode-icon">
                     <div class="toggle-ball" aria-hidden="true"></div>
@@ -41,94 +41,94 @@
             
             <!-- Navigation Menu-->
             <nav id="primary-nav" class="primary-navigation" aria-label="Main Navigation">
+                <button type="button" class="menu-close-btn" aria-label="Close Navigation Menu" aria-controls="primary-nav">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" aria-hidden="true">
+                        <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                    </svg>
+                </button>
                 <div class="primary-nav-grid">
-                    <button type="button" class="menu-close-btn" aria-label="Close Main Navigation" aria-controls="primary-nav">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" aria-hidden="true">
-                            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
-                        </svg>
-                    </button>
                     <div class="search">
                         <div class="language-selector" aria-label="Language Selection">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                                 <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm7.931 9h-2.764a14.67 14.67 0 0 0-1.792-6.243A8.013 8.013 0 0 1 19.931 11zM12.53 4.027c1.035 1.364 2.427 3.78 2.627 6.973H9.03c.139-2.596.994-5.028 2.451-6.974.172-.01.344-.026.519-.026.179 0 .354.016.53.027zm-3.842.7C7.704 6.618 7.136 8.762 7.03 11H4.069a8.013 8.013 0 0 1 4.619-6.273zM4.069 13h2.974c.136 2.379.665 4.478 1.556 6.23A8.01 8.01 0 0 1 4.069 13zm7.381 6.973C10.049 18.275 9.222 15.896 9.041 13h6.113c-.208 2.773-1.117 5.196-2.603 6.972-.182.012-.364.028-.551.028-.186 0-.367-.016-.55-.027zm4.011-.772c.955-1.794 1.538-3.901 1.691-6.201h2.778a8.005 8.005 0 0 1-4.469 6.201z"></path>
                             </svg>
-                            <ul class="language-list">
-                                <li class="language-list-item"><a href="" lang="en">English</a></li>
-                                <li class="language-list-item"><a href="" lang="fr">Français</a></li>
-                                <li class="language-list-item"><a href="" lang="de">Deutsch</a></li>
+                            <ul class="language-list" role="group">
+                                <li class="language-list-item"><a href="#" lang="en">English</a></li>
+                                <li class="language-list-item"><a href="#" lang="fr">Français</a></li>
+                                <li class="language-list-item"><a href="#" lang="de">Deutsch</a></li>
                             </ul>
                         </div>
                         <span class="search-wrapper" aria-label="Search Bar">
                             <label for="search-bar" style="display: none;">Search</label>
                             <input type="text" id="search-bar" placeholder="Find Press release, Images and Videos" class="search-input">
                             <button type="button" class="search-btn" aria-label="Click to Search">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="bi bi-search" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="bi bi-search" viewBox="0 0 16 16" aria-hidden="true">
                                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
                                 </svg>
                             </button>
                         </span>
                     </div>
-                    <div class="navigation-area" aria-label="Navigation Links">
+                    <div class="navigation-area">
                         <ul class="nav-list-primary" style="grid-area: list-1;">
-                            <li class="list-category">HYPERCARS</li>
-                            <li class="primary-nav-list-item"><a href="" class="primary-nav-links">TOURBILLON</a></li>
+                            <li class="list-category"><span role="heading" aria-level="3">HYPERCARS</span></li>
+                            <li class="primary-nav-list-item"><a href="#" class="primary-nav-links">TOURBILLON</a></li>
                             <li class="primary-nav-list-item">
-                                <a href="" class="primary-nav-links">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" class="right-arrow">
+                                <a href="#" class="primary-nav-links">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" class="right-arrow" aria-hidden="true">
                                         <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/>
                                     </svg>CHIRON MODELS
                                 </a>
                             </li>
                             <li class="primary-nav-list-item">
-                                <a href="" class="primary-nav-links">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" class="right-arrow">
+                                <a href="#" class="primary-nav-links">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" class="right-arrow" aria-hidden="true">
                                         <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/>
                                     </svg>FEW-OFF
                                 </a>
                             </li>
                             <li class="primary-nav-list-item">
-                                <a href="" class="primary-nav-links">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" class="right-arrow">
+                                <a href="#" class="primary-nav-links">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" class="right-arrow" aria-hidden="true">
                                         <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/>
                                     </svg>MODERN CLASSIC
                                 </a>
                             </li>
                         </ul>
                         <ul class="nav-list-primary" style="grid-area: list-2;">
-                            <li class="list-category">MEDIA CONTENT</li>
-                            <li class="primary-nav-list-item"><a href="" class="primary-nav-links">PRESS RELEASE</a></li>
-                            <li class="primary-nav-list-item"><a href="" class="primary-nav-links">STORIES</a></li>
-                            <li class="primary-nav-list-item"><a href="" class="primary-nav-links">IMAGES</a></li>
-                            <li class="primary-nav-list-item"><a href="" class="primary-nav-links">VIDEOS</a></li>
-                            <li class="primary-nav-list-item"><a href="" class="primary-nav-links">TECHNICAL DATA</a></li>
+                            <li class="list-category"><span role="heading" aria-level="3">MEDIA CONTENT</span></li>
+                            <li class="primary-nav-list-item"><a href="#" class="primary-nav-links">PRESS RELEASE</a></li>
+                            <li class="primary-nav-list-item"><a href="#" class="primary-nav-links">STORIES</a></li>
+                            <li class="primary-nav-list-item"><a href="#" class="primary-nav-links">IMAGES</a></li>
+                            <li class="primary-nav-list-item"><a href="#" class="primary-nav-links">VIDEOS</a></li>
+                            <li class="primary-nav-list-item"><a href="#" class="primary-nav-links">TECHNICAL DATA</a></li>
                         </ul>
                         <ul class="nav-list-primary" style="grid-area: list-4;">
-                            <li class="list-category">TOPICS</li>
+                            <li class="list-category"><span role="heading" aria-level="3">TOPICS</span></li>
                             <li class="primary-nav-list-item">
-                                <a href="" class="primary-nav-links">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" class="right-arrow">
+                                <a href="#" class="primary-nav-links">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" class="right-arrow" aria-hidden="true">
                                         <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/>
                                     </svg>BRAND LIFESTYLE
                                 </a>
                             </li>
-                            <li class="primary-nav-list-item"><a href="" class="primary-nav-links">COMPANY</a></li>
-                            <li class="primary-nav-list-item"><a href="" class="primary-nav-links">DESIGN</a></li>
-                            <li class="primary-nav-list-item"><a href="" class="primary-nav-links">EVENTS</a></li>
-                            <li class="primary-nav-list-item"><a href="" class="primary-nav-links">HERITAGE</a></li>
-                            <li class="primary-nav-list-item"><a href="" class="primary-nav-links">TECHNOLOGY</a></li>
+                            <li class="primary-nav-list-item"><a href="#" class="primary-nav-links">COMPANY</a></li>
+                            <li class="primary-nav-list-item"><a href="#" class="primary-nav-links">DESIGN</a></li>
+                            <li class="primary-nav-list-item"><a href="#" class="primary-nav-links">EVENTS</a></li>
+                            <li class="primary-nav-list-item"><a href="#" class="primary-nav-links">HERITAGE</a></li>
+                            <li class="primary-nav-list-item"><a href="#" class="primary-nav-links">TECHNOLOGY</a></li>
                         </ul>
                     </div>
                     <div class="nav-footer">
                         <div class="nav-footer-legals" style="grid-area: legals;" aria-label="Legals and T&C Information">
                             <ul class="nav-footer-list">
-                                <li class="nav-footer-list-item"><a href="" class="nav-footer-links">Contact</a></li>
-                                <li class="nav-footer-list-item"><a href="" class="nav-footer-links">Legal Notice</a></li>
-                                <li class="nav-footer-list-item"><a href="" class="nav-footer-links">Terms of use</a></li>
+                                <li class="nav-footer-list-item"><a href="#" class="nav-footer-links">Contact</a></li>
+                                <li class="nav-footer-list-item"><a href="#" class="nav-footer-links">Legal Notice</a></li>
+                                <li class="nav-footer-list-item"><a href="#" class="nav-footer-links">Terms of use</a></li>
                             </ul>
                             <ul class="nav-footer-list">
-                                <li class="nav-footer-list-item"><a href="" class="nav-footer-links">Privacy Policy</a></li>
-                                <li class="nav-footer-list-item"><a href="" class="nav-footer-links">Cookie Policy</a></li>
-                                <li class="nav-footer-list-item"><a href="" class="nav-footer-links">Settings</a></li>
+                                <li class="nav-footer-list-item"><a href="#" class="nav-footer-links">Privacy Policy</a></li>
+                                <li class="nav-footer-list-item"><a href="#" class="nav-footer-links">Cookie Policy</a></li>
+                                <li class="nav-footer-list-item"><a href="#" class="nav-footer-links">Settings</a></li>
                             </ul>
                         </div>
                         <div class="nav-socials" style="grid-area: socials;" aria-label="Social Media Links">
