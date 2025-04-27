@@ -182,11 +182,12 @@ header {
     padding-inline: 2rem;
     padding-block: 6rem 1rem;
     position: fixed;
+    display: none;
     background-color: var(--clr-background);
     z-index: 999;
     color: var(--clr-text);
     transform: translateX(100%);
-    transition: 300ms ease;
+    transition: 300ms ease allow-discrete;
     opacity: 0;
     will-change: transform;
     transform: translateZ(0%);
@@ -206,6 +207,7 @@ header {
 }
 .primary-navigation.active {
     opacity: 1;
+    display: block;
     transform: translateX(0%);
 }
 .backdrop.active {
@@ -213,11 +215,17 @@ header {
     display: block;
 }
 @starting-style {
+    .primary-navigation.active {
+        opacity: 0;
+        display: block;
+        transform: translateX(100%);
+    }
     .backdrop.active {
         opacity: 0;
         display: block;
     }
 }
+
 .primary-nav-grid {
     height: 100%;
     width: 100%;
