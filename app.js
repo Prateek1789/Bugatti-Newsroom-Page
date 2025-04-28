@@ -39,7 +39,32 @@ function trapFocus(event) {
 function setTheme() {
     body.classList.toggle("dark-mode");
     toggleBall.classList.toggle("active");
+
+    // Saves the theme state in local storage
+    const isThemeDark = body.classList.contains("dark-mode");
+    localStorage.setItem("theme", isThemeDark ? "dark" : "light");
 };
+
+// Function to load theme based on user's System Preference and to override it based on user's choice 
+function setThemeOnLoad() {
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+        body.classList.add("dark-mode");
+        toggleBall.classList.add("active");
+    }
+    else if (savedTheme === "light") {
+        body.classList.remove("dark-mode");
+        toggleBall.classList.remove("active");
+    }
+    else if(prefersDark) {
+        body.classList.add("dark-mode");
+        toggleBall.classList.add("active");
+    }
+}
+
+window.addEventListener("DOMContentLoaded", setThemeOnLoad);
 
 window.addEventListener("click", (e) => {
     let modalRect = modal.getBoundingClientRect();
