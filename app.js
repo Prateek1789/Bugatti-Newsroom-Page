@@ -45,24 +45,40 @@ function setTheme() {
     localStorage.setItem("theme", isThemeDark ? "dark" : "light");
 };
 
+// Helper function to Toggl theme between light and dark based on a boolean flag
+function toggleTheme(flag) {
+    if (flag) {
+        body.classList.add("dark-mode");
+        toggleBall.classList.add("active");
+    }
+    else {
+        body.classList.remove("dark-mode");
+        toggleBall.classList.remove("active");
+    }
+}
+
 // Function to load theme based on user's System Preference and to override it based on user's choice 
 function setThemeOnLoad() {
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const savedTheme = localStorage.getItem("theme");
 
     if (savedTheme === "dark") {
-        body.classList.add("dark-mode");
-        toggleBall.classList.add("active");
+        toggleTheme(true);
     }
     else if (savedTheme === "light") {
-        body.classList.remove("dark-mode");
-        toggleBall.classList.remove("active");
+        toggleTheme(false);
     }
     else if(prefersDark) {
-        body.classList.add("dark-mode");
-        toggleBall.classList.add("active");
+        toggleTheme(true);
     }
-}
+};
+
+// Event Listener to check and match system theme without having to reload the site
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", e => {
+    if (!localStorage.getItem("theme")) {
+        toggleTheme(e.matches);
+    }
+});
 
 window.addEventListener("DOMContentLoaded", setThemeOnLoad);
 
