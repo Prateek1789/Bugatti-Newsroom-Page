@@ -1,5 +1,6 @@
 # Bugatti-Newsroom-Page
 This is a Bugatti Newsroom Web page clone.  
+This site is hosted using GitHub Pages you can chekout the project here [Bugatti Newsroom](https://prateek1789.github.io/Bugatti-Newsroom-Page/).  
 It is a static webpage built completely in HTML, CSS, and JavaScript to practice advanced HTML and CSS topics like:- 
   1. Semantic HTML.
   2. ARIA Tags.
