@@ -191,6 +191,7 @@ header {
     opacity: 0;
     will-change: transform;
     transform: translateZ(0%);
+    overflow: scroll;
 }
 .backdrop {
     top: 0;
@@ -230,12 +231,12 @@ header {
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: 80px auto 90px;
     grid-template-areas: 
         "nav-search"
         "nav-list"
         "nav-footer";
-    gap: 3rem;
+    gap: 6rem;
 }
 .primary-nav-grid a:hover {
     color: var(--clr-accent);
@@ -256,10 +257,10 @@ header {
 }
 .search {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: start;
-    gap: 2rem;
+    justify-content: space-between;
 }
 .language-selector,
 .language-list {
@@ -271,14 +272,14 @@ header {
 }
 
 .search-wrapper {
-    height: 50px;
-    width: 60%;
+    height: 35px;
+    width: 52%;
     border-block-end: 1px solid var(--clr-border);
     display: flex;
     align-items: center;
 }
 .search-btn {
-    width: 50px;
+    width: 35px;
     height: 100%;
     border: none;
     background-color: transparent;
@@ -291,33 +292,79 @@ header {
     font-size: var(--font-md);
     border: none;
     background-color: transparent;
-    padding-inline: 1rem;
 }
 .navigation-area {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: auto 1fr;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: 
         "list-1 list-2"
-        "list-3 list-4";
+        "list-1 list-4";
+    gap: 2.5rem;
+}
+.nav-list-primary {
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
 }
-
 .list-category {
     font-size: var(--font-xsm);
     font-weight: 360;
-    margin-block-end: 1rem;
+    letter-spacing: 1.55px;
 }
 
-.primary-nav-list-item {
-    margin-block-end: 1rem;
+.expand {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1.55rem 0fr;
+    grid-template-areas:
+        "model"
+        "model-varients";
+    overflow: hidden;
 }
-.primary-nav-links:hover {
+.model-name {
+    width: 20ch;
+    display: flex;
+    gap: 0.25rem;
+    grid-area: model;
+    align-items: center;
+    font-size: var(--font-md);
+    cursor: pointer;
+}
+.model-name:hover {
+    color: var(--clr-accent);
     .right-arrow {
         fill: var(--clr-accent);
     }
+}
+.model-varients-list {
+    width: 100%;
+    height: 100%;
+    padding-inline-start: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: hidden;
+}
+.model-varients-list li a {
+    font-size: var(--font-sm);
+    font-weight: 350;
+}
+.expand,
+.model-name,
+.model-varients-list {
+    transition: 300ms ease;
+}
+.expand.active {
+    grid-template-rows: 1.55rem 1fr;
+}
+.model-varients-list.active {
+    padding-block-start: 1rem;
+}
+.right-arrow.active {
+    transform: rotate(90deg);
 }
 
 .primary-nav-list-item a {
@@ -841,17 +888,13 @@ main {
     }
     .primary-navigation {
         height: 100vh;
+        width: 75vw;
         padding-inline: 2rem;
         padding-block: 6rem 2rem;
         overflow: scroll;
     }
     .primary-nav-grid {
-        grid-template-rows: auto auto 90px;
-        grid-template-areas: 
-            "nav-search"
-            "nav-list"
-            "nav-footer";
-        gap: 1rem;
+        gap: 6rem;
     }
     .menu-close-btn {
         right: 1rem;
@@ -860,9 +903,8 @@ main {
         width: 100%;
     }
     .navigation-area {
-        grid-template-rows: 1fr 2fr;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+        grid-template-rows: auto 2fr;
+        gap: 2.5rem;
     }
     .nav-footer-legals,
     .nav-socials {
@@ -921,13 +963,6 @@ main {
     }
     .search-wrapper {
         width: 100%;
-    }
-    .navigation-area {
-        width: 100%;
-        height: 100%;
-        grid-template-rows: repeat(2, 1fr);
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
     }
     .nav-footer-legals,
     .nav-socials {
@@ -1017,19 +1052,13 @@ main {
         height: 22px;
     }
     .navigation-area {
-        display: grid;
-        grid-template-rows: repeat(2, auto);
+        grid-template-rows: auto 2fr;
         grid-template-areas: 
             "list-1 list-2"
             "list-4 list-3";
-        gap: 1rem;
+        gap: 2rem;
     }
     
-    .primary-nav-links:focus {
-        .right-arrow {
-            fill: var(--clr-accent);
-        }
-    }
     .nav-socials {
         justify-content: center;
     }
@@ -1153,7 +1182,7 @@ main {
         right: 0.6rem;
     }
     .primary-nav-grid {
-        grid-template-rows: auto auto 124px;
+        grid-template-rows: auto auto 150px;
         gap: 2.5rem;
     }
     .navigation-area {
