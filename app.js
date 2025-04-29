@@ -5,6 +5,19 @@ const menuToggle = document.querySelector(".menu-toggle");
 const primaryNavigation = document.querySelector(".primary-navigation");
 const backdrop = document.querySelector(".backdrop");
 const modal = document.getElementById('sub-modal');
+const modelVarients = document.querySelectorAll(".model-name");
+const expand = document.querySelectorAll(".expand");
+const rightArrow = document.querySelectorAll(".right-arrow");
+const varientList = document.querySelectorAll(".model-varients-list");
+
+// Function to handle expanding Model List 
+modelVarients.forEach((itm, idx) => {
+    itm.addEventListener("click", () => {
+        expand[idx].classList.toggle("active");
+        rightArrow[idx].classList.toggle("active");
+        varientList[idx].classList.toggle("active");
+    });
+})
 
 // Variables for assigning First and Last focus child
 let firstFocusChild;
