@@ -39,7 +39,7 @@ function trapFocus(event) {
 function setTheme() {
     body.classList.toggle("dark-mode");
     toggleBall.classList.toggle("active");
-
+    document.querySelector(".model-name").classList.toggle("dark-mode");
     // Saves the theme state in local storage
     const isThemeDark = body.classList.contains("dark-mode");
     localStorage.setItem("theme", isThemeDark ? "dark" : "light");
