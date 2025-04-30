@@ -120,7 +120,7 @@ window.addEventListener("click", (e) => {
         return;
     }
 
-    if (e.target.closest(".menu-close-btn") || e.clientX < navMenuRect.left) {
+    if (e.target.closest(".menu-close-btn") || (e.clientX && e.clientX < navMenuRect.left)) {
         if (primaryNavigation.classList.contains("active")) {
             backdrop.classList.remove("active");
             primaryNavigation.classList.remove("active");
@@ -132,8 +132,10 @@ window.addEventListener("click", (e) => {
     }
 
     if (e.target.closest(".model-name")) {
-        e.target.parentNode.classList.toggle("active");
-        e.target.parentNode.querySelectorAll(".right-arrow, .model-varients-list").forEach(itm => itm.classList.toggle("active"));
+        const isExpanded = e.target.getAttribute("aria-expanded") === "false";
+        e.target.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+        e.target.parentNode.parentNode.classList.toggle("active");
+        e.target.parentNode.parentNode.querySelectorAll(".right-arrow, .model-varients-list").forEach(itm => itm.classList.toggle("active"));
     }
 });
 
