@@ -336,6 +336,7 @@ header {
     cursor: pointer;
     border: none;
     background-color: transparent;
+    color: var(--clr-text);
 }
 .model-name:hover {
     color: var(--clr-accent);
